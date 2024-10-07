@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add/Edit Product</title>
+</head>
+<body>
+    <h1>{% if form.instance.id %}Edit Product{% else %}Add New Product{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button><br><br>
+
+        <a href="{% url 'product_list' %}">Cancel</a>
+    </form>
+</body>
+</html>
